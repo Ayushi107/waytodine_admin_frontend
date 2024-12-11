@@ -117,9 +117,9 @@ const RestaurantList = () => {
             const response = await axios.post(`${API_BASE_URL}Listing/get-Restaurant-details`, {
                 RestaurantId: restaurantId,
             });
-  
+
             console.log(response.data.$values[0]);
-            
+
             if (response.data) {
                 setRestaurantDetails(response.data.$values[0]);
                 setModal(true); // Open the modal
@@ -170,6 +170,7 @@ const RestaurantList = () => {
                         <tr>
                             <th>Restaurant ID</th>
                             <th>Restaurant Name</th>
+                            <th>Email</th>
                             <th>City</th>
                             <th>Country</th>
                             <th>RestaurantDocument</th>
@@ -183,14 +184,18 @@ const RestaurantList = () => {
                                 <tr key={restaurant.restaurantId}>
                                     <td>{restaurant.restaurantId}</td>
                                     <td>{restaurant.name}</td>
+                                    <td>{restaurant.email}</td>
                                     <td>{restaurant.city}</td>
                                     <td>{restaurant.country}</td>
-                                    <td>{restaurant.restaurantDocument}</td>
+                                    <td>
+                                        <a href={restaurant.restaurantDocument}>
+                                            Click here
+                                        </a>
+                                    </td>
                                     <td>
                                         <input
                                             type="checkbox"
                                             checked={restaurant.status === 1}
-                                            disabled={restaurant.status !== 1}
                                             onChange={() => handleVerifyRestaurant(restaurant.restaurantId)}
                                         />
                                     </td>
