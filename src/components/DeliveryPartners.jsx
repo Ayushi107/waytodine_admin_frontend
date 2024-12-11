@@ -119,7 +119,7 @@ const DeliveryPartners = () => {
                             <th>Email</th>
                             <th>Phone</th>
                             <th>Availability</th>
-                            <th>IsVerified</th>
+                            {/* <th>IsVerified</th> */}
                             <th>Details</th>
                         </tr>
                     </thead>
@@ -132,13 +132,13 @@ const DeliveryPartners = () => {
                                     <td>{driver.driverEmail}</td>
                                     <td>{driver.phone}</td>
                                     <td>{driver.isAvailable ? "Available" : "Not Available"}</td>
-                                    <td>
+                                    {/* <td>
                                         <input
                                             type="checkbox"
                                             checked={driver.status === 1}
                                             onChange={() => handleVerifyDriver(driver.deliveryPersonId)}
                                         />
-                                    </td>
+                                    </td> */}
                                     <td>
                                         <Button
                                             color="info"
