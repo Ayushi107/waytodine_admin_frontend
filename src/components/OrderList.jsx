@@ -164,7 +164,7 @@ const Orders = () => {
                                         ))}
                                     </td>
                                     <td>{order.totalAmount}</td>
-                                    <td>{order.createdAt}</td>
+                                    <td>{new Date(order.createdAt).toLocaleString()}</td>
                                     <td>
                                         {order.paymentStatus === 1 ? "Pending" :
                                             order.paymentStatus === 2 ? "Completed" :
