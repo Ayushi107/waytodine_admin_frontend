@@ -136,7 +136,6 @@ const DeliveryPartners = () => {
                                         <input
                                             type="checkbox"
                                             checked={driver.status === 1}
-                                            disabled={driver.status !== 1}
                                             onChange={() => handleVerifyDriver(driver.deliveryPersonId)}
                                         />
                                     </td>
